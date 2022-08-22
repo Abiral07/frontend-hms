@@ -1,0 +1,51 @@
+<div fxLayout="column" fxLayoutAlign="space-between" class="sidebar" >
+  <div class="logo" fxLayoutAlign="center" fxFlex="10">
+    <img src="assets/fone.png" alt="logo">
+  </div>
+    <hr>
+  <div class="navigation" fxFlex="80">
+    <mat-accordion fxLayout="column" fxLayoutAlign="space-evenly" fxLayoutGap="20">
+      <mat-expansion-panel [expanded]="step===0" (opened)="setStep(0)" hideToggle>
+      <mat-expansion-panel-header id="User"><mat-panel-title>USER</mat-panel-title></mat-expansion-panel-header>
+        <ng-template matExpansionPanelContent>
+          <a routerLink="/profile">Profile</a>
+          <a routerLink="/getAllUser" *ngIf="isAdmin">Get All Users</a>
+          <a [routerLink]="'updateUser/'+uid">Update User Details</a>
+        </ng-template>
+      </mat-expansion-panel>
+      <mat-expansion-panel [expanded]="step===1" (opened)="setStep(1)" hideToggle>
+      <mat-expansion-panel-header id="Reservation"><mat-panel-title>Reservation</mat-panel-title></mat-expansion-panel-header>
+        <ng-template matExpansionPanelContent>
+          <a routerLink="/book-room">Book a Room</a>
+          <a routerLink="/my-reservation">My Reservation</a>
+          <a routerLink="/update-reservation">Update Reservation</a>
+          <a routerLink="/checkout">Check-Out</a>
+          <a routerLink="/checkin">Check-In</a>
+          <a routerLink="/getAllReservation">All Reservations</a>
+        </ng-template>
+      </mat-expansion-panel>
+      <mat-expansion-panel [expanded]="step===2" (opened)="setStep(2)" hideToggle>
+      <mat-expansion-panel-header id="Role"><mat-panel-title>Role</mat-panel-title></mat-expansion-panel-header>
+        <ng-template matExpansionPanelContent>
+          <a routerLink="">Get All Role</a>
+          <a routerLink="">Add New Role</a>
+          <a routerLink="">Update Role</a>
+          <a routerLink="">Assign Role to User</a>
+        </ng-template>
+      </mat-expansion-panel>
+      <mat-expansion-panel [expanded]="step===3" (opened)="setStep(3)" hideToggle>
+      <mat-expansion-panel-header id="Room"><mat-panel-title>Room</mat-panel-title></mat-expansion-panel-header>
+        <ng-template matExpansionPanelContent>
+          <a routerLink="">Get All Room</a>
+          <a routerLink="">Add Room</a>
+          <a routerLink="">Update Room</a>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+  <div class="footer-link" fxLayoutAlign="space-evenly center" fxFlex="10">
+    <mat-icon>facebook</mat-icon>
+    <mat-icon>add_alert</mat-icon>
+    <mat-icon>place</mat-icon>
+  </div>
+</div>

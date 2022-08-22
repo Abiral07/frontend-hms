@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'frontend-hms';
+  username = 'frontend-hms';
+  sidebar: boolean = false;
+
+  toggleSidebar(){
+    if(sessionStorage.getItem('roles')!=null)
+      this.sidebar = !this.sidebar;
+  }
 }

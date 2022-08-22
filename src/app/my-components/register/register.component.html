@@ -1,0 +1,102 @@
+<form (ngSubmit)="registerForm.valid && signIn()" [formGroup]="registerForm" class="login-div" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10">
+    <img src="../../../assets/fone.png">
+    <mat-card>
+      <mat-card-title><span style="caret-color: rgba(0,0,0,0);">REGISTER</span></mat-card-title>
+        <mat-card-content fxLayout="column">
+            <div fxLayout="row"  fxLayoutGap="30">
+                <mat-form-field appearance="outline" color="accent" fxFlex=40>
+                    <mat-label>User Name</mat-label>
+                    <input formControlName="userName" matInput placeholder="User-Name" [(ngModel)]="user.userName"  name="userName" />
+                    <mat-error>User-Name must be between 8-50 character long </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" color="accent" fxFlex=60>
+                    <mat-label>Full Name</mat-label>
+                    <input formControlName="fullName" matInput placeholder="Full Name" [(ngModel)]="user.fullName" name="fullName" />
+                    <mat-error>Full Name is required</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxLayoutGap="30">
+                <mat-form-field appearance="outline" color="accent" fxFlex=45>
+                    <mat-label>Email</mat-label>
+                    <input formControlName="email" matInput placeholder="Email" [(ngModel)]="user.email" name="email" />
+                    <mat-error>Not a valid email</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" color="accent" fxFlex=35>
+                    <mat-label>Mobile</mat-label>
+                    <input formControlName="mobile" matInput placeholder="Mobile" [(ngModel)]="user.mobile" name="mobile" />
+                    <mat-error>Not a valid Mobile no.</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" color="accent" fxFlex=20>
+                    <mat-label>Gender</mat-label>
+<!--                    <input formControlName="gender" matInput aria-label="Gender" [matAutocomplete]="auto"  placeholder="Pick one" name="gender" />-->
+<!--                    <mat-autocomplete #auto="matAutocomplete">-->
+<!--                        <mat-option *ngFor="let gender of filteredGenders | async" [value]="gender">-->
+<!--                            {{gender}}-->
+<!--                        </mat-option>-->
+<!--                    </mat-autocomplete>-->
+                    <mat-select placeholder="Select Gender" formControlName="gender"  [(ngModel)]="user.gender">
+                      <mat-option *ngFor="let gender of filteredGenders | async" [value]="gender">
+                        {{gender}}
+                      </mat-option>
+                    </mat-select>
+                    <mat-error>Pick a Gender</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxLayoutGap="30">
+                <!-- <mat-form-field appearance="outline" color="accent"> -->
+                <mat-form-field appearance="outline" color="accent" fxFlex=50>
+                    <mat-label>Date of Birth</mat-label>
+                    <input formControlName="dob" matInput [matDatepicker]="picker" [(ngModel)]="user.dob" name="dob">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-error>Age should be greater than 18</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" color="accent" fxFlex=50>
+                    <mat-label>Country</mat-label>
+                    <input formControlName="country" matInput placeholder="Country" [(ngModel)]="user.address.country" name="country" />
+                    <mat-error>Country is required</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxLayoutGap="30">
+                <mat-form-field appearance="outline" color="accent" fxFlex=40>
+                    <mat-label>State</mat-label>
+                    <input formControlName="state" matInput placeholder="State"  [(ngModel)]="user.address.state"  name="state" />
+                    <mat-error>State is required</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" color="accent" fxFlex=40>
+                    <mat-label>City</mat-label>
+                    <input formControlName="city" matInput placeholder="City"  [(ngModel)]="user.address.city" name="city" />
+                    <mat-error>City is required</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" color="accent" fxFlex=20>
+                    <mat-label>Ward</mat-label>
+                    <input formControlName="ward" matInput placeholder="Ward"  [(ngModel)]="user.address.ward" name="ward" />
+                    <mat-error>Ward is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutGap="30px">
+                <mat-form-field appearance="outline" color="accent" fxFlex=50>
+                    <mat-label>Password</mat-label>
+                    <input formControlName="password" matInput type="password" placeholder="password"  [(ngModel)]="user.password" name="password" />
+                    <mat-error>Password must be between 8-64 character long,<br> must contain 1-UPPERCASE and 1-number</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" color="accent" fxFlex=50>
+                    <mat-label>Confirm-Password</mat-label>
+                    <input formControlName="confirmPassword" matInput type="password" placeholder="Confirm-Password" />
+                    <mat-error>Password doesn't match</mat-error>
+                </mat-form-field>
+            </div>
+        </mat-card-content>
+        <div class="buttons" fxLayoutAlign="space-between center">
+            <button type="submit" mat-raised-button color="primary">Register</button>
+            <div fxLayoutAlign="end center" fxLayoutGap="5px">
+                <span style="text-decoration: underline;">Allready registered? Click here to Sign-in-></span>
+                <a routerLink="/login"><button mat-stroked-button color="accent">Sign-in</button></a>
+            </div>
+        </div>
+    </mat-card>
+</form>

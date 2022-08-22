@@ -1,0 +1,33 @@
+ngb-carousel{
+  height: 40%;
+}
+.home{
+  margin: 30px;
+  min-height: 100vh;
+}
+mat-card{
+background: rgba(0, 0, 0, 0.4);
+  min-height: 35rem
+}
+.home img{
+  min-width: 20%;
+  max-width: 30%;
+  height: auto;
+  display: block;
+  border-radius: 50%;
+}
+
+.home h1,mat-card-footer{
+  margin: 1vw;
+  font-weight: 900;
+  font-size: 6vw;
+}
+h1{
+  white-space: nowrap;
+  padding: 1vw;
+}
+.clip{
+  display: block;
+  margin: 10px;
+  color: black;
+}

@@ -1,0 +1,100 @@
+<form (ngSubmit)="updateForm.valid && update()" [formGroup]="updateForm" class="update-div" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10">
+    <img src="./assets/fone.png" alt="fonepay">
+    <mat-card>
+      <mat-card-title><span style="caret-color: rgba(0,0,0,0);text-align: center">Update User Details</span>
+      </mat-card-title>
+      <mat-card-content fxLayout="column">
+        <div class="details" fxLayout="column">
+          <h2>ID: <span>{{user.uid}}</span></h2>
+          <h2>User-Name: <span>{{user.userName}}</span></h2>
+          <h2>full-Name: <span>{{user.fullName}}</span></h2>
+          <h2>Email: <span>{{user.email}}</span></h2>
+          <h2>Mobile: <span>{{user.mobile}}</span></h2>
+          <h2>Gender: <span>{{user.gender}}</span></h2>
+          <h2>Date-of-Birth: <span>{{user.dob}}</span></h2>
+          <h2>Address:
+            <h3>Country: <span>{{user.address.country}}</span></h3>
+            <h3>State: <span>{{user.address.state}}</span></h3>
+            <h3>City: <span>{{user.address.city}}</span></h3>
+            <h3>Ward: <span>{{user.address.ward}}</span></h3>
+          </h2>
+        </div>
+        <div fxLayout="column" >
+          <h4>Please fill only those fields that needs to be changed</h4>
+          <div fxLayout="row" fxLayoutGap="10">
+            <mat-form-field appearance="outline" color="accent" fxFlex=40>
+              <mat-label>{{user.userName}}</mat-label>
+              <input formControlName="userName" matInput placeholder="User-Name" name="userName"/>
+              <mat-error>User-Name must be between 8-50 character long</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="accent" fxFlex=60>
+              <mat-label>{{user.fullName}}</mat-label>
+              <input formControlName="fullName" matInput placeholder="Full Name" name="fullName"/>
+              <mat-error>Full Name is required</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="30">
+            <mat-form-field appearance="outline" color="accent" fxFlex=45>
+              <mat-label>{{user.email}}</mat-label>
+              <input formControlName="email" matInput placeholder="Email" name="email"/>
+              <mat-error>Not a valid email</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="accent" fxFlex=25>
+              <mat-label>{{user.mobile}}</mat-label>
+              <input formControlName="mobile" matInput placeholder="Mobile" name="mobile"/>
+              <mat-error>Not a valid Mobile no.</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="accent" fxFlex=25>
+              <mat-label>Gender:{{user.gender}}</mat-label>
+              <mat-select placeholder="Select Gender" formControlName="gender">
+                <mat-option *ngFor="let gender of filteredGenders | async" [value]="gender">
+                  {{gender}}
+                </mat-option>
+              </mat-select>
+              <mat-error>Pick a Gender</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="30">
+            <!-- <mat-form-field appearance="outline" color="accent"> -->
+            <mat-form-field appearance="outline" color="accent" fxFlex=50>
+              <mat-label>DOB:{{user.dob}}</mat-label>
+              <input formControlName="dob" matInput [matDatepicker]="picker" name="dob">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              <mat-error>Age should be greater than 18</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="accent" fxFlex=50>
+              <mat-label>{{user.address.country}}</mat-label>
+              <input formControlName="country" matInput placeholder="Country" name="country"/>
+              <mat-error>Country is required</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="30">
+            <mat-form-field appearance="outline" color="accent" fxFlex=40>
+              <mat-label>{{user.address.state}}</mat-label>
+              <input formControlName="state" matInput placeholder="State" name="state"/>
+              <mat-error>State is required</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="accent" fxFlex=40>
+              <mat-label>{{user.address.city}}</mat-label>
+              <input formControlName="city" matInput placeholder="City" name="city"/>
+              <mat-error>City is required</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="accent" fxFlex=20>
+              <mat-label>{{user.address.ward}}</mat-label>
+              <input formControlName="ward" matInput placeholder="Ward" name="ward"/>
+              <mat-error>Ward is required</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="buttons" fxLayoutAlign="end">
+            <button type="submit" mat-raised-button color="accent">Save Details</button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+</form>

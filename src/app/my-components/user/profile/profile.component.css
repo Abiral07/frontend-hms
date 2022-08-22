@@ -1,0 +1,25 @@
+mat-card{
+  margin: 50px auto;
+  max-width: 70%;
+  background: rgba(30, 28, 28, 0.56);
+}
+/*mat-card-header img{*/
+/*  border-radius: 50%;*/
+/*  margin: 10px;*/
+/*}*/
+.example-header-image {
+  background-image: url('src/assets/luffy.jpg');
+  width: 5vw;
+  height: 5vw;
+  background-size: cover;
+}
+.mat-card-title{
+  text-align: center;
+  font-size: 3vw;
+  color: #ffffff;
+  text-shadow: 2px 2px cyan;
+}
+.content span{
+  offset-before: 1000px;
+  color: cyan ;
+}

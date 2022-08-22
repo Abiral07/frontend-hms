@@ -1,0 +1,47 @@
+mat-toolbar{
+  /*min-width: 900px;*/
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 50px
+}
+
+
+.nav-items ul{
+    margin: 0;
+    list-style: none;
+}
+
+.nav-items a{
+  display: inline-block;
+    color: #fff;
+    font-size: 2vw;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 20px;
+}
+
+ul li a:hover{
+    cursor: pointer;
+    background: white;
+    color: black;
+}
+
+.buttons a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+.buttons a:hover{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+.menu{
+  display: none;
+}
+/* If the screen size is 900px wide or less, hide full navbar */
+@media screen and (max-width: 900px){
+  .nav-items a{
+    display: none ;
+  }
+  .menu{
+    display:inline-block ;
+  }
+}

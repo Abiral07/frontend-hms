@@ -23,7 +23,7 @@ describe('AppComponent', () => {
   it(`should have as title 'frontend-hms'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('frontend-hms');
+    expect(app.username).toEqual('frontend-hms');
   });
 
   it('should render title', () => {

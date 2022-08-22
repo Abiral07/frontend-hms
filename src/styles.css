@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@600&display=swap');
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  color: white;
+  -webkit-text-fill-color: white !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'DynaPuff', cursive;
+  /*font-family: Roboto, "Helvetica Neue", sans-serif;*/
+  caret-color: rgba(0, 0, 0, 0);
+  background: url("src/assets/gradient-bg.jpg");
+  background-size: cover;
+}
+
+.primary-snackbar {
+  background: royalblue
+}
+
+.success-snackbar {
+  background: #1a8d1a
+}
+
+.danger-snackbar {
+  background: #ef2121
+}

@@ -1,0 +1,63 @@
+<mat-toolbar fxLayoutAlign="center center">
+  <div class="navbar-brand" fxLayoutAlign="start center" fxFlex="10" fxLayoutGap="30px">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+            (click)="onClickBurger()" fxFlex="5">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span><a routerLink="" style="cursor: pointer;text-decoration: none;color: white">HOTEL SWAGATAM</a></span>
+  </div>
+  <div class="nav-items" fxLayoutAlign="center center" fxFlex="85">
+    <ul fxLayout="row" fxLayoutAlign="center center">
+      <li><a routerLink="">HOME</a></li>
+      <li><a routerLink="/about">ABOUT</a></li>
+      <li><a routerLink="/addReservation">BOOK-NOW</a></li>
+      <li><a routerLink="/getAllRooms">ROOMS</a></li>
+      <li><a routerLink="/contact">CONTACT</a></li>
+    </ul>
+  </div>
+  <div class="buttons" fxLayoutAlign="end center" fxLayoutGap="10px" fxFlex="10">
+    <div class="menu">
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button routerLink="" mat-menu-item>
+          <mat-icon>home</mat-icon>
+          <span>Home</span>
+        </button>
+        <button routerLink="/about" mat-menu-item>
+          <mat-icon>description</mat-icon>
+          <span>About</span>
+        </button>
+        <button routerLink="/addReservation" mat-menu-item>
+          <mat-icon>event</mat-icon>
+          <span>Book-Now</span>
+        </button>
+        <button routerLink="/getAllRooms" mat-menu-item>
+          <mat-icon>voicemail</mat-icon>
+          <span>Rooms</span>
+        </button>
+        <button routerLink="/contact" mat-menu-item>
+          <mat-icon>dialpad</mat-icon>
+          <span>Contact</span>
+        </button>
+      </mat-menu>
+    </div>
+
+    <ng-container *ngIf="loginStatus==false;else notLoggedIn">
+      <a routerLink="/login">
+        <button mat-raised-button color="warn">Login</button>
+      </a>
+      <a routerLink="/register">
+        <button mat-flat-button color="primary">Sign-Up</button>
+      </a>
+    </ng-container>
+    <ng-template #notLoggedIn>
+      <a routerLink="/login">
+        <button routerLink="/login" mat-raised-button color="warn" (click)="logout()">
+          <mat-icon>logout</mat-icon>
+        </button>
+      </a>
+    </ng-template>
+  </div>
+</mat-toolbar>

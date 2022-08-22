@@ -1,0 +1,49 @@
+.update-div{
+  margin:10px auto;
+}
+
+.mat-card{
+  /*min-width: 50%;*/
+  /*max-width: 90%;*/
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  padding: 1rem;
+}
+.mat-card-title{
+  text-align: center;
+  margin-bottom: 20px;
+}
+.details{
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  background: rgba(148, 148, 148, 0.35);
+}
+.details h2{
+  margin: 0;
+}
+.details h3{
+  margin: 0 25px;
+}
+.details span{
+  color: cyan;
+}
+.forget{
+  display: block;
+  margin-bottom: 10px;
+  /* color:#02b9b9d5; */
+}
+.forget:hover{
+  color: #00ffff;
+  padding-left: 5px;
+}
+
+.buttons button:nth-child(0){
+  padding: 10% 40%;
+  text-decoration: none;
+  color: rgb(253, 253, 253);
+}
+.buttons button:hover{
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}

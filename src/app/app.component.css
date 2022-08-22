@@ -1,0 +1,26 @@
+:host{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+mat-drawer{
+    min-width:15%;
+    background-color: rgba(33, 33, 33, 0);
+    border: none;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+mat-drawer-container{
+    width: available;
+    height: 100%;
+    background: url("src/assets/gradient-bg.jpg");
+    background-size: cover;
+}
+@media screen and (max-width: 900px) {
+  mat-drawer{
+    min-width: 160px;
+  }
+
+}

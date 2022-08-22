@@ -1,0 +1,26 @@
+<div class="profile">
+  <mat-card>
+    <mat-card-header fxLayoutAlign="center center" fxLayout="row">
+      <div mat-card-avatar class="example-header-image"></div>
+<!--      <img matCardImage src="assets/luffy.jpg" alt="dp">-->
+      <mat-card-title>{{user.fullName}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="content">
+<!--      <hr>-->
+      <h2>User-Name: <span>{{user.userName}}</span></h2>
+      <h2>Gender: <span>{{user.gender}}</span></h2>
+      <h2>Age: <span>{{user.age}}</span></h2>
+      <h2>Date-of-Birth: <span>{{user.dob}}</span></h2>
+      <h2>Email: <span>{{user.email}}</span></h2>
+      <h2>Mobile: <span>{{user.mobile}}</span></h2>
+      <h2>Status: <span>{{user.isActive}}</span></h2>
+      <h2>Granted-Roles: <mat-chip-list>
+                            <mat-chip *ngFor="let role of user.roles" [color]="role=='ROLE_ADMIN'?'warn':'accent'" selected>{{role}}</mat-chip>
+                          </mat-chip-list></h2>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" [routerLink]="'/updateUser/'+user.uid">UPDATE</button>
+      <button mat-raised-button color="warn" [routerLink]="'/changePassword/'+user.uid">Change-Password</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

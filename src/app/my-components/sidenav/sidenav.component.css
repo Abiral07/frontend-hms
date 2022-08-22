@@ -1,0 +1,36 @@
+.sidebar{
+  height: 100%;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.logo{
+  background: rgba(201, 165, 142, 0.8);
+  margin:10px auto;
+  padding: 0.3rem;
+  border-radius: 50px;
+}
+.logo img{
+  width: 80%;
+}
+
+
+mat-expansion-panel{
+  background: rgba(0, 0, 0, 0.28);
+  border:none;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+mat-expansion-panel a{
+  display: block;
+  text-decoration: none;
+  color: #c7c7c7;
+  width: 100%;
+  padding: 10px;
+  border-radius: 30px;
+}
+mat-expansion-panel a:hover{
+  background: rgba(130, 125, 133, 0.36);
+  cursor: pointer;
+}
