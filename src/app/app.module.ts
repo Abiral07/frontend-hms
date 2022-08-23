@@ -22,6 +22,9 @@ import { UpdateUserComponent } from './my-components/user/update-user/update-use
 import { ListUserComponent } from './my-components/user/list-user/list-user.component';
 import {MatSortModule} from "@angular/material/sort";
 import { ChangePasswordComponent } from './my-components/user/change-password/change-password.component';
+import { ListRoomComponent } from './my-components/room/list-room/list-room.component';
+import { AddRoomComponent } from './my-components/room/add-room/add-room.component';
+import { UpdateRoomComponent } from './my-components/room/update-room/update-room.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { ChangePasswordComponent } from './my-components/user/change-password/ch
     ProfileComponent,
     UpdateUserComponent,
     ListUserComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    ListRoomComponent,
+    AddRoomComponent,
+    UpdateRoomComponent
   ],
     imports: [
         BrowserModule,

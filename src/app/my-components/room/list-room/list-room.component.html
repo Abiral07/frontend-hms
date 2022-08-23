@@ -1,0 +1,35 @@
+<app-add-room *ngIf="isAdmin"></app-add-room>
+<div class="example-container mat-elevation-z8">
+  <div class="example-table-container">
+    <table mat-table [dataSource]="rooms" class="example-table">
+      <!-- id Column -->
+      <ng-container matColumnDef="ROOM-ID">
+        <th mat-header-cell *matHeaderCellDef>ROOM-ID</th>
+        <td mat-cell *matCellDef="let row">{{row.rid}}</td>
+      </ng-container>
+
+      <!-- type Column -->
+      <ng-container matColumnDef="TYPE">
+        <th mat-header-cell *matHeaderCellDef>TYPE</th>
+        <td mat-cell *matCellDef="let row" ><div [class]="row.type">&nbsp;</div>{{row.type}}</td>
+      </ng-container>
+
+      <!-- price Column -->
+      <ng-container matColumnDef="PRICE">
+        <th mat-header-cell *matHeaderCellDef>PRICE</th>
+        <td mat-cell *matCellDef="let row">{{row.price | currency:'NPR':'Rs.'}}</td>
+      </ng-container>
+      <!-- status Column -->
+      <ng-container matColumnDef="STATUS">
+        <th mat-header-cell *matHeaderCellDef>STATUS</th>
+        <td mat-cell *matCellDef="let row">{{row.status?'Booked':'Available'}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="rowClicked(row)"></tr>
+    </table>
+    <mat-paginator [length]='this.rooms.length' [pageSize]="10" [pageSizeOptions]="[10, 25, 100]"
+                   aria-label="Select page">
+    </mat-paginator>
+  </div>
+</div>

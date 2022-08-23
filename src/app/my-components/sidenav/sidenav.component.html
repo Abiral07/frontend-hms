@@ -21,11 +21,11 @@
           <a routerLink="/update-reservation">Update Reservation</a>
           <a routerLink="/checkout">Check-Out</a>
           <a routerLink="/checkin">Check-In</a>
-          <a routerLink="/getAllReservation">All Reservations</a>
+          <a routerLink="/getAllReservation" *ngIf="isAdmin">All Reservations</a>
         </ng-template>
       </mat-expansion-panel>
       <mat-expansion-panel [expanded]="step===2" (opened)="setStep(2)" hideToggle>
-      <mat-expansion-panel-header id="Role"><mat-panel-title>Role</mat-panel-title></mat-expansion-panel-header>
+      <mat-expansion-panel-header id="Role" *ngIf="isAdmin"><mat-panel-title>Role</mat-panel-title></mat-expansion-panel-header>
         <ng-template matExpansionPanelContent>
           <a routerLink="">Get All Role</a>
           <a routerLink="">Add New Role</a>
@@ -36,9 +36,9 @@
       <mat-expansion-panel [expanded]="step===3" (opened)="setStep(3)" hideToggle>
       <mat-expansion-panel-header id="Room"><mat-panel-title>Room</mat-panel-title></mat-expansion-panel-header>
         <ng-template matExpansionPanelContent>
-          <a routerLink="">Get All Room</a>
-          <a routerLink="">Add Room</a>
-          <a routerLink="">Update Room</a>
+          <a routerLink="/getAllRoom">Get All Room</a>
+          <a routerLink="/addRoom" *ngIf="isAdmin">Add Room</a>
+          <a routerLink="/updateRoom" *ngIf="isAdmin">Update Room</a>
         </ng-template>
       </mat-expansion-panel>
     </mat-accordion>

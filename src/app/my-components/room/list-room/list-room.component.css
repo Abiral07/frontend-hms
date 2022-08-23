@@ -1,3 +1,4 @@
+/* Structure */
 .example-container {
   position: relative;
   margin: 30px;
@@ -51,4 +52,13 @@ table th{
 
 .mat-column-created {
   max-width: 124px;
+}
+.DIAMOND{background: #b9f2ff;display: inline-block;border-radius: 50%;width: 20px}
+.GOLD{background: #FFD700;display: inline-block;border-radius: 50%;width: 20px
+}
+.PLATINUM{background: #e5e4e2;display: inline-block;border-radius: 50%;width: 20px
+}
+.SILVER{background: rgba(192, 192, 192, 0.71);display: inline-block;border-radius: 50%;width: 20px
+}
+.BRONZE{background: #b08d57;display: inline-block;border-radius: 50%;width: 20px
 }

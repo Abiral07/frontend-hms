@@ -1,0 +1,89 @@
+<div class="search" fxLayout="column" fxLayoutAlign="center">
+  <form [formGroup]="selectRoom" (ngSubmit)="getRoomById()" fxLayoutGap="10" fxLayoutAlign="center">
+    <mat-form-field appearance="outline">
+      <mat-label>Search By Room Id</mat-label>
+      <mat-select formControlName="rid">
+        <mat-option *ngFor="let room of rooms" [value]="room.rid">
+          {{room.rid}}
+        </mat-option>
+      </mat-select>
+      <mat-error>Select a valid room-id</mat-error>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary" style="height: 3rem">
+      <mat-icon>search</mat-icon>
+    </button>
+  </form>
+  <form [formGroup]="selectRoom" (ngSubmit)="getRoomByType()" fxLayoutGap="10">
+    <mat-form-field appearance="outline">
+<!--      <span>Search if a room of particular type is available</span>-->
+      <mat-label>Search By Room Type</mat-label>
+      <mat-select formControlName="type">
+        <mat-option *ngFor="let type of types" [value]="type">
+          {{type}}
+        </mat-option>
+      </mat-select>
+      <mat-error>Select a valid room-type</mat-error>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary" style="height: 3rem">
+      <mat-icon>search</mat-icon>
+    </button>
+  </form>
+</div>
+
+<ng-template [ngIf]="room">
+  <form (ngSubmit)="updateRoomForm.valid && updateRoom()" [formGroup]="updateRoomForm" class="update-div"
+        fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10">
+    <img src="./assets/fone.png" alt="fonepay">
+    <mat-card>
+      <mat-card-title><span style="caret-color: rgba(0,0,0,0);text-align: center">Update Room Details</span>
+      </mat-card-title>
+      <mat-card-content fxLayout="column">
+        <div class="details" fxLayout="column">
+          <h2>Room-ID: <span>{{room.rid}}</span></h2>
+          <h2>Type: <span>{{room.type}}</span></h2>
+          <h2>Price: <span>{{room.price}}</span></h2>
+          <h2>Status: <span>{{room.status?'Booked':'Available'}}</span></h2>
+        </div>
+        <div fxLayout="column">
+          <h4>Please fill only those fields that needs to be changed</h4>
+          <div fxLayout="row" fxLayoutGap="10">
+            <mat-form-field appearance="outline" color="accent">
+              <mat-label>TYPE</mat-label>
+              <mat-select formControlName="type">
+                <mat-option *ngFor="let type of types" [value]="type">
+                  {{type}}
+                </mat-option>
+              </mat-select>
+              <mat-error>Select a valid room-type</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" color="accent">
+              <mat-label>PRICE</mat-label>
+              <input formControlName="price" matInput placeholder="price"/>
+              <mat-error>price is required</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="30">
+            <mat-form-field appearance="outline" color="accent" fxFlex=50>
+              <mat-label>Status</mat-label>
+              <mat-select formControlName="status">
+                <mat-option [value]="true">Booked</mat-option>
+                <mat-option [value]="false">Available</mat-option>
+              </mat-select>
+              <mat-error>Room status is needed</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="buttons" fxLayoutAlign="end">
+            <button type="submit" mat-raised-button color="accent">Update Details</button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </form>
+</ng-template>
+
+<ng-template [ngIf]="filteredRoom">
+  <h1>First Room Available of the Type {{filteredRoom.type}} is:  </h1>
+  <p>{{filteredRoom | json}}</p>
+</ng-template>

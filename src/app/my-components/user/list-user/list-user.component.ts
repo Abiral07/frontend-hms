@@ -35,7 +35,7 @@ export class ListUserComponent implements OnInit {
   }
 
   rowClicked(row:any) {
-    console.log('roe clicked');
+    console.log('row clicked');
     this.router.navigate([`/updateUser/${row.uid}`]);
   }
 }

@@ -9,6 +9,9 @@ import {ListUserComponent} from "./my-components/user/list-user/list-user.compon
 import {UpdateUserComponent} from "./my-components/user/update-user/update-user.component";
 import {AdminGuard} from "./guard/admin.guard";
 import {ChangePasswordComponent} from "./my-components/user/change-password/change-password.component";
+import {ListRoomComponent} from "./my-components/room/list-room/list-room.component";
+import {AddRoomComponent} from "./my-components/room/add-room/add-room.component";
+import {UpdateRoomComponent} from "./my-components/room/update-room/update-room.component";
 
 const routes: Routes = [
   {path:"", redirectTo:"home", pathMatch:"full"},
@@ -19,7 +22,10 @@ const routes: Routes = [
   {path:"profile", component: ProfileComponent},
   {path:"getAllUser", component: ListUserComponent,canActivate:[AdminGuard]},
   {path:"updateUser/:uid", component: UpdateUserComponent},
-  {path:"changePassword/:uid", component: ChangePasswordComponent}
+  {path:"changePassword/:uid", component: ChangePasswordComponent},
+  {path:"getAllRoom", component: ListRoomComponent},
+  {path:"addRoom", component: AddRoomComponent},
+  {path:"updateRoom", component: UpdateRoomComponent}
   // {path:"BookRoom", component: ProfileComponent}
 ];
 
