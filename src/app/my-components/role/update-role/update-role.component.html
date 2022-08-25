@@ -1,0 +1,21 @@
+<mat-card fxLayout="column" fxLayoutAlign="center center">
+  <mat-card-title>Update-Role</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="updateRoleForm" (ngSubmit)="updateRoleForm.valid && updateRole()" fxLayout="row" fxLayoutGap="20" fxLayoutAlign="cente">
+      <mat-form-field appearance="outline" color="accent">
+        <mat-label>Role Name</mat-label>
+        <input formControlName="roleName" matInput placeholder="role-name"/>
+        <mat-error>Role name must be less than 20 character long AND atleast 2 character long</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" color="accent">
+        <mat-label>Description</mat-label>
+        <textarea formControlName="roleDescription" matInput placeholder="description"></textarea>
+        <mat-error>description length should be between(8-100)</mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="accent" type="submit" style="height: 3rem">
+        <mat-icon>edit</mat-icon>
+        Update Role
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>

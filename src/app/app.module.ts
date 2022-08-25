@@ -25,6 +25,10 @@ import { ChangePasswordComponent } from './my-components/user/change-password/ch
 import { ListRoomComponent } from './my-components/room/list-room/list-room.component';
 import { AddRoomComponent } from './my-components/room/add-room/add-room.component';
 import { UpdateRoomComponent } from './my-components/room/update-room/update-room.component';
+import { ListRoleComponent } from './my-components/role/list-role/list-role.component';
+import { AddRoleComponent } from './my-components/role/add-role/add-role.component';
+import { UpdateRoleComponent } from './my-components/role/update-role/update-role.component';
+import { AssignRoleComponent } from './my-components/role/assign-role/assign-role.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,11 @@ import { UpdateRoomComponent } from './my-components/room/update-room/update-roo
     ChangePasswordComponent,
     ListRoomComponent,
     AddRoomComponent,
-    UpdateRoomComponent
+    UpdateRoomComponent,
+    ListRoleComponent,
+    AddRoleComponent,
+    UpdateRoleComponent,
+    AssignRoleComponent
   ],
     imports: [
         BrowserModule,

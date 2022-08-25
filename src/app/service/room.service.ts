@@ -12,6 +12,7 @@ export class RoomService {
 
   getAllRooms(){
     if(this.allRoom==null)
+      console.log('LIST OF ROOMS FROM API')
       this.allRoom=this.http.get(`${this.baseUrl}/getRooms`)
     return this.allRoom;
   }

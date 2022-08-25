@@ -11,7 +11,7 @@ import {catchError,of as observableOf} from "rxjs";
   styleUrls: ['./list-user.component.css']
 })
 export class ListUserComponent implements OnInit {
-  displayedColumns: string[] = ['ID', 'USER-NAME', 'FULL-NAME', 'EMAIL', 'MOBILE', 'DOB', 'AGE'];
+  displayedColumns: string[] = ['ID', 'USER-NAME', 'FULL-NAME', 'EMAIL', 'MOBILE','GENDER', 'DOB', 'AGE','ADDRESS'];
   users: any;
   @ViewChild(MatPaginator) paginator?: MatPaginator;
 
@@ -26,7 +26,7 @@ export class ListUserComponent implements OnInit {
     this.userService.getAllUser()
       .pipe(catchError(() => observableOf(null)))
       .subscribe(
-        (data:any) => (this.users = new MatTableDataSource(data))
+        (data:any) => {this.users = new MatTableDataSource(data)}
         ,error => alert(error.error.error+":   "+error.error.message));
   }
   applyFilter(event: Event) {

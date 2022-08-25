@@ -11,17 +11,18 @@ import Swal from "sweetalert2";
 })
 export class AddRoomComponent implements OnInit {
   types=['DIAMOND','PLATINUM','GOLD','SILVER','BRONZE'];
-  addRoomForm = new FormGroup({
-    type: new FormControl(null,[Validators.required]),
-    price: new FormControl(null,[Validators.required,Validators.pattern(/^\d+\.?\d*$|^\d*\.?\d+$/)])
-  })
-  constructor(private roomService:RoomService) { }
+  addRoomForm :FormGroup
+  constructor(private roomService:RoomService) {
+    this.addRoomForm = new FormGroup({
+      type: new FormControl(null,[Validators.required]),
+      price: new FormControl(null,[Validators.required,Validators.pattern(/^\d+\.?\d*$|^\d*\.?\d+$/)])
+    })
+  }
 
   ngOnInit(): void {
   }
 
   addRoom() {
-    console.log(this.addRoomForm.value)
     this.roomService.addRoom(this.addRoomForm.value).subscribe(
       (res)=>{
         Swal.fire({

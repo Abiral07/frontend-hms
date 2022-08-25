@@ -31,7 +31,7 @@ export class ListRoomComponent implements OnInit {
       .pipe(catchError(() => observableOf(null)))
       .subscribe(
         (data:any) => {this.rooms = new MatTableDataSource(data);
-    console.log(this.rooms.length);},
+    console.log(data.length);},
         (error:any) => alert(error.error.error+":   "+error.error.message));
   }
   applyFilter(event: Event) {
@@ -40,8 +40,6 @@ export class ListRoomComponent implements OnInit {
   }
 
   rowClicked(row:any) {
-    // console.log('row clicked',row.rid);
-    // console.log(this.rooms.length)
     this.router.navigateByUrl(`/updateRoom`,{state:{rid:row.rid}});
   }
 }

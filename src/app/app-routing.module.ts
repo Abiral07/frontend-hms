@@ -12,6 +12,10 @@ import {ChangePasswordComponent} from "./my-components/user/change-password/chan
 import {ListRoomComponent} from "./my-components/room/list-room/list-room.component";
 import {AddRoomComponent} from "./my-components/room/add-room/add-room.component";
 import {UpdateRoomComponent} from "./my-components/room/update-room/update-room.component";
+import {AssignRoleComponent} from "./my-components/role/assign-role/assign-role.component";
+import {UpdateRoleComponent} from "./my-components/role/update-role/update-role.component";
+import {AddRoleComponent} from "./my-components/role/add-role/add-role.component";
+import {ListRoleComponent} from "./my-components/role/list-role/list-role.component";
 
 const routes: Routes = [
   {path:"", redirectTo:"home", pathMatch:"full"},
@@ -25,8 +29,17 @@ const routes: Routes = [
   {path:"changePassword/:uid", component: ChangePasswordComponent},
   {path:"getAllRoom", component: ListRoomComponent},
   {path:"addRoom", component: AddRoomComponent},
-  {path:"updateRoom", component: UpdateRoomComponent}
-  // {path:"BookRoom", component: ProfileComponent}
+  {path:"updateRoom", component: UpdateRoomComponent},
+  {path:"getAllRole", component: ListRoleComponent},
+  {path:"addRole", component: AddRoleComponent},
+  {path:"updateRole/:id", component: UpdateRoleComponent},
+  {path:"assignRole", component: AssignRoleComponent},
+  {path:"book-room", component: ProfileComponent},
+  {path:"getAllReservation", component: ProfileComponent},
+  {path:"updateReservation", component: ProfileComponent},
+  {path:"my-reservation", component: ProfileComponent},
+  {path:"checkout", component: ProfileComponent},
+  {path:"checkin", component: ProfileComponent},
 ];
 
 @NgModule({

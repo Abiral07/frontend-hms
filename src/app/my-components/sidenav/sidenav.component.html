@@ -27,10 +27,9 @@
       <mat-expansion-panel [expanded]="step===2" (opened)="setStep(2)" hideToggle>
       <mat-expansion-panel-header id="Role" *ngIf="isAdmin"><mat-panel-title>Role</mat-panel-title></mat-expansion-panel-header>
         <ng-template matExpansionPanelContent>
-          <a routerLink="">Get All Role</a>
-          <a routerLink="">Add New Role</a>
-          <a routerLink="">Update Role</a>
-          <a routerLink="">Assign Role to User</a>
+          <a routerLink="/getAllRole">Get All Role</a>
+          <a routerLink="/addRole">Add New Role</a>
+          <a routerLink="/assignRole">Assign Role to User</a>
         </ng-template>
       </mat-expansion-panel>
       <mat-expansion-panel [expanded]="step===3" (opened)="setStep(3)" hideToggle>
